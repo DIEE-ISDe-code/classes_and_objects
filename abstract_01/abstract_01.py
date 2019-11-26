@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Abstract class forced all the subcasses to implement _post_init() method.
 
 
 """
@@ -11,7 +12,8 @@ class Z(ABC):
     def __init__(self):
         self.z=0
         self._post_init()
-    @abstractmethod    
+        
+    @abstractmethod 
     def _post_init(self):
         pass
 
