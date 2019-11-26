@@ -5,7 +5,6 @@ import math
 from abc import ABC, abstractmethod
 class Polygon(ABC):
 	def __init__(self, sides):
-		super().__init__()
 		self.sides = sides
 			
 	@abstractmethod
@@ -13,9 +12,6 @@ class Polygon(ABC):
 		pass;
 
 class Rectangle(Polygon):
-    #def __init__(self, sides):
-    #    super().__init__()
-    #    self.sides = sides
 
     def compute_area(self):  # you are forced to redefine this method
         return self.sides[0]*self.sides[1]
