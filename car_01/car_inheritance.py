@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Abstract class forced all the subcasses to implement _post_init() method.
 
 
 """
