@@ -24,28 +24,41 @@ class Car():
     def __init__(self,engine,wheels, seats):
         self.engine=engine
         self.wheels= wheels  
-        self.seats=seats # copy, deepcopy
+        #self.wheels= copy.deepcopy(wheels) 
+        self.seats=seats 
         
  
 engine=Engine()
 wheels=[Wheel() for i in range(4) ]
+
+#wheels=[]
+#for i in range(4):
+#    new_wheel=Wheel()
+#    wheels.append(new_wheel)
+    
+
+
 seats=[Seat(color=3)  for i in range(4)]  
  
-car=Car(engine,wheels, seats)
+car1=Car(engine,wheels, seats)
+car2=Car(engine,wheels, seats)
+
 
 print('\nENGINE')
-print(car.engine)
+print(car1.engine)
 print('\nSEATS')
-print(car.seats)
+print(car1.seats)
 print('\nWHEELS')
-print(car.wheels)
+print(car1.wheels)
 
 print('\nWHEEL - PRESSURE')
-print(car.wheels[0].pressure)
-wheels[0].pressure=10
-print(car.wheels[0].pressure)
+print(car1.wheels[0].pressure)
+print(car2.wheels[0].pressure)
 
-print('\nSEAT - COLOR')
-print(car.seats[0].color)
-seats[0].color=5
-print(car.seats[0].color)
+car1.wheels[0].pressure=5
+
+print('\nWHEEL - PRESSURE after that we change the pressure of WHEEL 0 - CAR 1')
+# IF WE DON'T USE DEEPCOPY, CARS SHARE THE SAME 'WHEEL' OBJECT!
+print(car1.wheels[0].pressure)
+print(car2.wheels[0].pressure)
+
